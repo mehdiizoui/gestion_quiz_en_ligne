@@ -31,6 +31,18 @@ public class Candidat implements Serializable {
 
 	public Candidat() {
 	}
+	
+	
+
+	public Candidat(String emailC, String nom, String passwordC, String prenom) {
+		super();
+		this.emailC = emailC;
+		this.nom = nom;
+		this.passwordC = passwordC;
+		this.prenom = prenom;
+	}
+
+
 
 	public int getId_Candidat() {
 		return this.id_Candidat;
@@ -93,5 +105,15 @@ public class Candidat implements Serializable {
 
 		return testq;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Candidat [id_Candidat=" + id_Candidat + ", emailC=" + emailC + ", nom=" + nom + ", passwordC="
+				+ passwordC + ", prenom=" + prenom + "]";
+	}
+	
+	
 
 }
