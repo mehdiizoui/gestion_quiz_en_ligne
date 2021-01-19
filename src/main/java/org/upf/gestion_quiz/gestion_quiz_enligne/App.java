@@ -54,6 +54,7 @@ public class App
         		+ "	</div>\r\n"
         		+ "</body>\r\n"
         		+ "</html>";
-        dao.alertByEmail(message,"attarikyoussef8@gmail.com","Demande");
+        //dao.alertByEmail(message,"attarikyoussef8@gmail.com","Demande");
+        System.out.println(dao.getCandidatbyEmail("attarikyoussef8@gmail.com"));
     }
 }

@@ -121,6 +121,16 @@ public class CompteDAO implements IntGlobale<Candidat>{
 		return res;
 	}
 	
+	public Candidat getCandidatbyEmail(String Email) {
+		Candidat c ;
+		Query query = em.createQuery("SELECT c FROM Candidat c where c.emailC = :femail");
+		query.setParameter("femail", Email);
+		query.setMaxResults(1);
+		List<Candidat> lst =  (List<Candidat>) query.getResultList();
+		c = lst.get(0);
+		return c;
+	}
+	
 	public boolean restaureCode(String Email) {
 		boolean res = false;
 		List<Candidat> lst = FindAll();

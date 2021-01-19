@@ -39,15 +39,19 @@ public class ServletAuthentification extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String Page = (String) session.getAttribute("Page");
-		if(Page.equals("Authentification")) {
-			response.sendRedirect(request.getContextPath() + "/WebLayer/Authentification.jsp");
-		}
-		if(Page.equals("Restauration")) {
-			response.sendRedirect(request.getContextPath() + "/WebLayer/MotsdePasseOublie.jsp");
-		}
-		if(Page.equals("Inscription")) {
-			response.sendRedirect(request.getContextPath() + "/WebLayer/Inscription.jsp");
-		}
+		
+			if(Page.equals("Authentification")) {
+				response.sendRedirect(request.getContextPath() + "/WebLayer/Authentification.jsp");
+			}
+			if(Page.equals("Restauration")) {
+				response.sendRedirect(request.getContextPath() + "/WebLayer/MotsdePasseOublie.jsp");
+			}
+			if(Page.equals("Inscription")) {
+				response.sendRedirect(request.getContextPath() + "/WebLayer/Inscription.jsp");
+			}
+			if(Page.equals("Accueil")) {
+				response.sendRedirect(request.getContextPath() + "/ServletTest");
+			}
 	}
 
 	/**
@@ -63,7 +67,9 @@ public class ServletAuthentification extends HttpServlet {
 			String password = request.getParameter("password");
 			if(dao.SeConnecter(email, password)) {
 				System.out.println("Succes");
-				//session.setAttribute("Page", "Authentification");
+				session.setAttribute("Page", "Accueil");
+				//hnaya !!
+				session.setAttribute("session", dao.getCandidatbyEmail(email));
 				session.setAttribute("er", "");
 			}
 			else {

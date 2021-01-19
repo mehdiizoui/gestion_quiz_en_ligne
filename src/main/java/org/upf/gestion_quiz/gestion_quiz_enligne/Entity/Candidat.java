@@ -106,4 +106,14 @@ public class Candidat implements Serializable {
 		return testq;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Candidat [id_Candidat=" + id_Candidat + ", emailC=" + emailC + ", nom=" + nom + ", passwordC="
+				+ passwordC + ", prenom=" + prenom + "]";
+	}
+	
+	
+
 }
