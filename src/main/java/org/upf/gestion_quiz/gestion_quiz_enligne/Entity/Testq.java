@@ -92,4 +92,10 @@ public class Testq implements Serializable {
 		this.typeq = typeq;
 	}
 
+	@Override
+	public String toString() {
+		return "Testq [idTest=" + idTest + ", date=" + date + ", candidat=" + candidat + ", typeq=" + typeq + "]";
+	}
+
+	
 }

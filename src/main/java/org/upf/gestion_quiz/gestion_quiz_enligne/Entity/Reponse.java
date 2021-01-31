@@ -34,6 +34,42 @@ public class Reponse implements Serializable {
 
 	public Reponse() {
 	}
+	
+	
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+	public Reponse(int reponseC, byte valide, Testq testq, Question question) {
+		super();
+		this.reponseC = reponseC;
+		this.valide = valide;
+		this.testq = testq;
+		this.question = question;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public ReponsePK getId() {
 		return this.id;

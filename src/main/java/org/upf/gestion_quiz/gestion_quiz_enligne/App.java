@@ -1,7 +1,18 @@
 package org.upf.gestion_quiz.gestion_quiz_enligne;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 import org.upf.gestion_quiz.gestion_quiz_enligne.Entity.Candidat;
+import org.upf.gestion_quiz.gestion_quiz_enligne.Entity.Reponse;
 import org.upf.gestion_quiz.gestion_quiz_enligne.dao.CompteDAO;
+import org.upf.gestion_quiz.gestion_quiz_enligne.dao.QuestionDAO;
+import org.upf.gestion_quiz.gestion_quiz_enligne.dao.ReponseDAO;
+import org.upf.gestion_quiz.gestion_quiz_enligne.dao.TestDAO;
 
 /**
  * Hello world!
@@ -9,7 +20,7 @@ import org.upf.gestion_quiz.gestion_quiz_enligne.dao.CompteDAO;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws ParseException
     {
     	CompteDAO dao = new CompteDAO();
     	
@@ -55,6 +66,15 @@ public class App
         		+ "</body>\r\n"
         		+ "</html>";
         //dao.alertByEmail(message,"attarikyoussef8@gmail.com","Demande");
-        System.out.println(dao.getCandidatbyEmail("attarikyoussef8@gmail.com"));
+        //System.out.println(dao.getCandidatbyEmail("attarikyoussef8@gmail.com"));
+        //QuestionDAO daoq = new QuestionDAO();
+        //System.out.println(daoq.FindAllWithType("INFORMATIQUE"));
+        //TestDAO daots = new TestDAO();
+        //System.out.println(daots.getIDtest(1, "INFORMATIQUE"));
+        //System.out.println(daots.FindById(17));
+        //ReponseDAO rps = new ReponseDAO();
+        //rps.Ajouter_Reponse_Manuelle(28, 16, 12);
+        
+        
     }
 }
