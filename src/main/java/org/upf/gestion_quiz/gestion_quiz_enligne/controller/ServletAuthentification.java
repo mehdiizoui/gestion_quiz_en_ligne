@@ -39,6 +39,9 @@ public class ServletAuthentification extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String Page = (String) session.getAttribute("Page");
+		System.out.println("Ani hnaya");
+		
+			
 		
 			if(Page.equals("Authentification")) {
 				response.sendRedirect(request.getContextPath() + "/WebLayer/Authentification.jsp");
@@ -52,6 +55,10 @@ public class ServletAuthentification extends HttpServlet {
 			if(Page.equals("Accueil")) {
 				response.sendRedirect(request.getContextPath() + "/ServletTest");
 			}
+			if(Page.equals("Admin")) {
+				response.sendRedirect(request.getContextPath() + "/questionController");
+			}
+		
 	}
 
 	/**
@@ -62,12 +69,24 @@ public class ServletAuthentification extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String page = (String) session.getAttribute("Page");
+		
+		if(session.getAttribute("session")!=null) {
+			session.setAttribute("session", null);
+			response.sendRedirect(request.getContextPath() + "/WebLayer/Authentification.jsp");
+			
+		}
+		else {
+			
+		
 		if(page.equals("Authentification")) {
 			String email= request.getParameter("login");
 			String password = request.getParameter("password");
 			if(dao.SeConnecter(email, password)) {
 				System.out.println("Succes");
 				session.setAttribute("Page", "Accueil");
+				if(email.equals("admin@gmail.com")) {
+					session.setAttribute("Page", "Admin");
+				}
 				//hnaya !!
 				session.setAttribute("session", dao.getCandidatbyEmail(email));
 				session.setAttribute("er", "");
@@ -114,6 +133,7 @@ public class ServletAuthentification extends HttpServlet {
 			}
 			//session.setAttribute("Page", "Inscription");
 			//response.sendRedirect(request.getContextPath() + "/ServletAuthentification");
+		}
 		}
 		
 	}

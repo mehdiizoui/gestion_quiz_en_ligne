@@ -41,6 +41,20 @@ public class Question implements Serializable {
 	public Question() {
 	}
 
+	
+	public Question(String choix1, String choix2, String choix3, String choix4, int correcte, String question,
+			Typeq typeqBean) {
+		super();
+		this.choix1 = choix1;
+		this.choix2 = choix2;
+		this.choix3 = choix3;
+		this.choix4 = choix4;
+		this.correcte = correcte;
+		this.question = question;
+		this.typeqBean = typeqBean;
+	}
+
+
 	public int getId_Question() {
 		return this.id_Question;
 	}
@@ -126,5 +140,13 @@ public class Question implements Serializable {
 
 		return repons;
 	}
+
+	@Override
+	public String toString() {
+		return "Question [id_Question=" + id_Question + ", choix1=" + choix1 + ", choix2=" + choix2 + ", choix3="
+				+ choix3 + ", choix4=" + choix4 + ", correcte=" + correcte + ", question=" + question + "]";
+	}
+	
+	
 
 }
